@@ -16,58 +16,7 @@
   --r: 10px; --rl: 14px;
 }
 html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg); color: var(--text); }
-
-#login-screen {
-  min-height: 100vh; display: flex; align-items: center;
-  justify-content: center; background: var(--dark);
-}
-.login-box {
-  background: rgba(255,255,255,0.04);
-  border: 0.5px solid rgba(196,163,90,0.3);
-  border-radius: var(--rl); padding: 48px 44px 44px;
-  width: 100%; max-width: 360px; text-align: center;
-  animation: fadeup 0.5s ease both;
-}
-@keyframes fadeup {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.login-logo {
-  width: 56px; height: 56px; border-radius: 50%; background: var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif); font-size: 22px; color: var(--dark);
-  font-weight: 600; margin: 0 auto 20px;
-}
-.login-title { font-family: var(--serif); font-size: 17px; color: var(--cream); font-weight: 500; letter-spacing: 0.05em; margin-bottom: 4px; }
-.login-subtitle { font-size: 11px; color: var(--gold); font-weight: 300; letter-spacing: 0.1em; margin-bottom: 32px; }
-.login-label { display: block; font-size: 11px; color: rgba(248,244,237,0.5); text-align: left; margin-bottom: 8px; letter-spacing: 0.08em; }
-.login-input {
-  width: 100%; padding: 12px 16px;
-  background: rgba(255,255,255,0.06);
-  border: 0.5px solid rgba(196,163,90,0.25);
-  border-radius: var(--r); color: var(--cream);
-  font-size: 14px; font-family: var(--sans); outline: none;
-  transition: border-color 0.2s; margin-bottom: 20px;
-}
-.login-input:focus { border-color: rgba(196,163,90,0.6); }
-.login-input::placeholder { color: rgba(248,244,237,0.2); }
-.login-btn {
-  width: 100%; padding: 13px; background: var(--gold);
-  border: none; border-radius: var(--r); color: var(--dark);
-  font-size: 13px; font-family: var(--sans); font-weight: 500;
-  cursor: pointer; letter-spacing: 0.06em;
-  transition: opacity 0.2s, transform 0.1s;
-}
-.login-btn:hover { opacity: 0.9; }
-.login-btn:active { transform: scale(0.98); }
-.login-error { font-size: 12px; color: #F09595; margin-top: 14px; min-height: 18px; }
-
-#portal-screen { display: none; min-height: 100vh; background: var(--bg); }
-.portal-header {
-  background: var(--dark); padding: 0 32px; height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-  position: sticky; top: 0; z-index: 100;
-}
+.portal-header { background: var(--dark); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
 .portal-header-left { display: flex; align-items: center; gap: 14px; }
 .portal-logo { width: 34px; height: 34px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 14px; color: var(--dark); font-weight: 600; flex-shrink: 0; }
 .portal-name { font-family: var(--serif); font-size: 14px; color: var(--cream); font-weight: 500; letter-spacing: 0.05em; }
@@ -76,267 +25,206 @@ html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg);
 .portal-date { font-size: 11px; color: rgba(248,244,237,0.4); font-weight: 300; }
 .logout-btn { font-size: 11px; color: rgba(248,244,237,0.4); background: none; border: 0.5px solid rgba(248,244,237,0.15); border-radius: 6px; padding: 5px 12px; cursor: pointer; font-family: var(--sans); transition: color 0.2s, border-color 0.2s; letter-spacing: 0.05em; }
 .logout-btn:hover { color: rgba(248,244,237,0.7); border-color: rgba(248,244,237,0.3); }
-
 .portal-body { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
 .section { margin-bottom: 36px; animation: fadeup 0.4s ease both; }
+@keyframes fadeup { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 .section:nth-child(1){animation-delay:.05s} .section:nth-child(2){animation-delay:.10s}
 .section:nth-child(3){animation-delay:.15s} .section:nth-child(4){animation-delay:.20s}
 .section:nth-child(5){animation-delay:.25s} .section:nth-child(6){animation-delay:.30s}
 .section-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
 .section-line { flex: 1; height: 0.5px; background: var(--border); }
 .section-title { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; color: var(--text3); white-space: nowrap; }
-
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
 .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--r); padding: 16px 16px 14px; text-decoration: none; display: block; position: relative; overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s; }
 .card:hover { border-color: var(--border-h); box-shadow: 0 2px 16px rgba(44,36,32,0.07); transform: translateY(-1px); }
 .card:active { transform: translateY(0); }
 .card:hover .card-arrow { opacity: 1; transform: translate(1px,-1px); }
 .card-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; flex-shrink: 0; }
-.icon-blue   { background: #E6F1FB; }
-.icon-amber  { background: #FAEEDA; }
-.icon-green  { background: #EAF3DE; }
-.icon-pink   { background: #FBEAF0; }
-.icon-purple { background: #EEEDFE; }
-.icon-red    { background: #FCEBEB; }
-.icon-teal   { background: #E1F5EE; }
+.icon-blue { background: #E6F1FB; } .icon-amber { background: #FAEEDA; } .icon-green { background: #EAF3DE; }
+.icon-pink { background: #FBEAF0; } .icon-purple { background: #EEEDFE; } .icon-red { background: #FCEBEB; }
+.icon-teal { background: #E1F5EE; }
 .card-name { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.3; margin-bottom: 3px; }
 .card-desc { font-size: 11px; color: var(--text2); line-height: 1.4; }
 .card-arrow { position: absolute; top: 12px; right: 12px; font-size: 12px; color: var(--text3); opacity: 0; transition: opacity 0.15s, transform 0.15s; }
 .badge { display: inline-block; font-size: 9px; font-weight: 500; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 20px; margin-top: 8px; }
-.badge-web { background: #E6F1FB; color: #185FA5; }
-.badge-int { background: #EAF3DE; color: #3B6D11; }
-.badge-ext { background: #FAEEDA; color: #854F0B; }
-.badge-sns { background: #FBEAF0; color: #993556; }
-.badge-ec  { background: #FCEBEB; color: #A32D2D; }
-.badge-doc { background: #EEEDFE; color: #534AB7; }
-
+.badge-web { background: #E6F1FB; color: #185FA5; } .badge-int { background: #EAF3DE; color: #3B6D11; }
+.badge-ext { background: #FAEEDA; color: #854F0B; } .badge-sns { background: #FBEAF0; color: #993556; }
+.badge-ec { background: #FCEBEB; color: #A32D2D; } .badge-doc { background: #EEEDFE; color: #534AB7; }
 .info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 .info-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--r); padding: 12px 14px; }
 .info-label { font-size: 10px; color: var(--text3); margin-bottom: 5px; letter-spacing: 0.08em; }
 .info-value { font-size: 13px; color: var(--text); font-weight: 500; word-break: break-all; line-height: 1.4; }
 .info-value a { color: #185FA5; text-decoration: none; }
-
 .portal-footer { background: var(--dark); padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
 .footer-left { display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(248,244,237,0.35); }
 .footer-dot { width: 5px; height: 5px; border-radius: 50%; background: #3B6D11; flex-shrink: 0; }
 .footer-right { font-size: 11px; color: rgba(248,244,237,0.25); }
 svg.ti { width: 18px; height: 18px; display: block; }
-
 @media (max-width: 600px) {
-  .portal-header { padding: 0 16px; }
-  .portal-body { padding: 20px 16px 48px; }
+  .portal-header { padding: 0 16px; } .portal-body { padding: 20px 16px 48px; }
   .cards-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-  .info-grid { grid-template-columns: 1fr 1fr; }
-  .portal-date { display: none; }
-  .login-box { margin: 24px; padding: 36px 28px 32px; }
+  .info-grid { grid-template-columns: 1fr 1fr; } .portal-date { display: none; }
 }
 </style>
 </head>
 <body>
 
-<div id="login-screen">
-  <div class="login-box">
-    <div class="login-logo">良</div>
-    <div class="login-title">恵那栗工房 良平堂</div>
-    <div class="login-subtitle">MEMBER PORTAL</div>
-    <form id="login-form" autocomplete="on">
-      <label class="login-label">パスワード</label>
-      <input type="password" id="login-pw" name="password" class="login-input" placeholder="••••••••" autocomplete="current-password">
-      <button type="submit" class="login-btn">ログイン</button>
-    </form>
-    <div class="login-error" id="login-error"></div>
+<header class="portal-header">
+  <div class="portal-header-left">
+    <div class="portal-logo">良</div>
+    <div>
+      <div class="portal-name">恵那栗工房 良平堂</div>
+      <div class="portal-name-sub">MEMBER PORTAL</div>
+    </div>
   </div>
-</div>
+  <div class="portal-header-right">
+    <div class="portal-date" id="portal-date"></div>
+    <button class="logout-btn" id="logout-btn">ログアウト</button>
+  </div>
+</header>
 
-<div id="portal-screen">
-  <header class="portal-header">
-    <div class="portal-header-left">
-      <div class="portal-logo">良</div>
-      <div>
-        <div class="portal-name">恵那栗工房 良平堂</div>
-        <div class="portal-name-sub">MEMBER PORTAL</div>
-      </div>
+<main class="portal-body">
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">公開サイト</span><div class="section-line"></div></div>
+    <div class="cards-grid">
+      <a class="card" href="https://ryouheidou.jp" target="_blank" rel="noopener">
+        <div class="card-icon icon-blue"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
+        <div class="card-name">コーポレートサイト</div><div class="card-desc">ryouheidou.jp</div>
+        <div><span class="badge badge-web">公開</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://cafe.ryouheidou.jp" target="_blank" rel="noopener">
+        <div class="card-icon icon-amber"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg></div>
+        <div class="card-name">カフェLP</div><div class="card-desc">cafe.ryouheidou.jp</div>
+        <div><span class="badge badge-web">公開</span></div><div class="card-arrow">↗</div>
+      </a>
     </div>
-    <div class="portal-header-right">
-      <div class="portal-date" id="portal-date"></div>
-      <button class="logout-btn" id="logout-btn">ログアウト</button>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">社内ツール</span><div class="section-line"></div></div>
+    <div class="cards-grid">
+      <a class="card" href="https://order.ryouheidou.jp" target="_blank" rel="noopener">
+        <div class="card-icon icon-green"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+        <div class="card-name">発注管理表</div><div class="card-desc">order.ryouheidou.jp</div>
+        <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://maestroichinomiya-ux.github.io/trading-company-case/" target="_blank" rel="noopener">
+        <div class="card-icon icon-pink"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div class="card-name">外商案件管理</div><div class="card-desc">GitHub Pages</div>
+        <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://maestroichinomiya-ux.github.io/task/" target="_blank" rel="noopener">
+        <div class="card-icon icon-purple"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div class="card-name">チームタスク管理</div><div class="card-desc">GitHub Pages</div>
+        <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://maestroichinomiya-ux.github.io/event/" target="_blank" rel="noopener">
+        <div class="card-icon icon-teal"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="card-name">催事スケジュール</div><div class="card-desc">GitHub Pages</div>
+        <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://maestroichinomiya-ux.github.io/price-list/" target="_blank" rel="noopener">
+        <div class="card-icon icon-green"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="card-name">商品価格表</div><div class="card-desc">GitHub Pages</div>
+        <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
+      </a>
     </div>
-  </header>
+  </div>
 
-  <main class="portal-body">
-
-    <div class="section">
-      <div class="section-head"><span class="section-title">公開サイト</span><div class="section-line"></div></div>
-      <div class="cards-grid">
-        <a class="card" href="https://ryouheidou.jp" target="_blank" rel="noopener">
-          <div class="card-icon icon-blue"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
-          <div class="card-name">コーポレートサイト</div><div class="card-desc">ryouheidou.jp</div>
-          <div><span class="badge badge-web">公開</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://cafe.ryouheidou.jp" target="_blank" rel="noopener">
-          <div class="card-icon icon-amber"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg></div>
-          <div class="card-name">カフェLP</div><div class="card-desc">cafe.ryouheidou.jp</div>
-          <div><span class="badge badge-web">公開</span></div><div class="card-arrow">↗</div>
-        </a>
-      </div>
+  <div class="section">
+    <div class="section-head"><span class="section-title">資料・データ</span><div class="section-line"></div></div>
+    <div class="cards-grid">
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1HMAl2GqxLMk0vWV1zfAC5fwKiA-hIONx/edit?gid=477780630#gid=477780630" target="_blank" rel="noopener">
+        <div class="card-icon icon-green"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
+        <div class="card-name">メイホウ在庫</div><div class="card-desc">Google スプレッドシート</div>
+        <div><span class="badge badge-doc">資料</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://drive.google.com/drive/folders/1-dzWjcwDSZLPoWtfkev0IegllI-a3F1w" target="_blank" rel="noopener">
+        <div class="card-icon icon-amber"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5"><path d="m22 12-4.5 7.5H6.5L2 12l4.5-7.5h11L22 12z"/><polyline points="2 12 22 12"/><line x1="12" y1="4.5" x2="12" y2="19.5"/></svg></div>
+        <div class="card-name">催事売上情報</div><div class="card-desc">Google ドライブ</div>
+        <div><span class="badge badge-doc">資料</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://docs.google.com/spreadsheets/d/13Gv-282zzO8aIpl7p4TRhK9RfDJ1BkfYgWr-yA5f9rc/edit?gid=0#gid=0" target="_blank" rel="noopener">
+        <div class="card-icon icon-purple"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="card-name">業務分担表</div><div class="card-desc">Google スプレッドシート</div>
+        <div><span class="badge badge-doc">資料</span></div><div class="card-arrow">↗</div>
+      </a>
     </div>
+  </div>
 
-    <div class="section">
-      <div class="section-head"><span class="section-title">社内ツール</span><div class="section-line"></div></div>
-      <div class="cards-grid">
-        <a class="card" href="https://order.ryouheidou.jp" target="_blank" rel="noopener">
-          <div class="card-icon icon-green"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
-          <div class="card-name">発注管理表</div><div class="card-desc">order.ryouheidou.jp</div>
-          <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://maestroichinomiya-ux.github.io/trading-company-case/" target="_blank" rel="noopener">
-          <div class="card-icon icon-pink"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
-          <div class="card-name">外商案件管理</div><div class="card-desc">GitHub Pages</div>
-          <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://maestroichinomiya-ux.github.io/task/" target="_blank" rel="noopener">
-          <div class="card-icon icon-purple"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-          <div class="card-name">チームタスク管理</div><div class="card-desc">GitHub Pages</div>
-          <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://maestroichinomiya-ux.github.io/event/" target="_blank" rel="noopener">
-          <div class="card-icon icon-teal"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-          <div class="card-name">催事スケジュール</div><div class="card-desc">GitHub Pages</div>
-          <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://maestroichinomiya-ux.github.io/price-list/" target="_blank" rel="noopener">
-          <div class="card-icon icon-green"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <div class="card-name">商品価格表</div><div class="card-desc">GitHub Pages</div>
-          <div><span class="badge badge-int">社内</span></div><div class="card-arrow">↗</div>
-        </a>
-      </div>
+  <div class="section">
+    <div class="section-head"><span class="section-title">ECサイト管理</span><div class="section-line"></div></div>
+    <div class="cards-grid">
+      <a class="card" href="https://admin.ocnk.net/admin/login.php" target="_blank" rel="noopener">
+        <div class="card-icon icon-amber"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="card-name">公式ECサイト</div><div class="card-desc">おちゃのこネット管理</div>
+        <div><span class="badge badge-ec">EC</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://glogin.rms.rakuten.co.jp/?sp_id=1" target="_blank" rel="noopener">
+        <div class="card-icon icon-red"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#A32D2D" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h5a2 2 0 0 0 0-4H8v8"/><line x1="13" y1="12" x2="16" y2="16"/></svg></div>
+        <div class="card-name">楽天市場 RMS</div><div class="card-desc">店舗管理システム</div>
+        <div><span class="badge badge-ec">EC</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://sellercentral-japan.amazon.com/ap/signin?openid.pape.preferred_auth_policies=Policy15&openid.pape.max_auth_age=300&openid.return_to=https%3A%2F%2Fsellercentral-japan.amazon.com%2Fgp%2Fhomepage.html&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=sc_jp_amazon_com_v2&openid.mode=checkid_setup&language=ja_JP&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" target="_blank" rel="noopener">
+        <div class="card-icon icon-amber"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5"><path d="M4 17c3.3 1.7 9.3 2.3 14-.5M16.5 18.5c.8-.3 2-.8 2.5-1.5"/><path d="M8 12V7a4 4 0 0 1 8 0v5"/><rect x="4" y="12" width="16" height="6" rx="2"/></svg></div>
+        <div class="card-name">Amazon セラーセントラル</div><div class="card-desc">出品・注文管理</div>
+        <div><span class="badge badge-ec">EC</span></div><div class="card-arrow">↗</div>
+      </a>
     </div>
+  </div>
 
-    <div class="section">
-      <div class="section-head"><span class="section-title">資料・データ</span><div class="section-line"></div></div>
-      <div class="cards-grid">
-        <a class="card" href="https://docs.google.com/spreadsheets/d/1HMAl2GqxLMk0vWV1zfAC5fwKiA-hIONx/edit?gid=477780630#gid=477780630" target="_blank" rel="noopener">
-          <div class="card-icon icon-green"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
-          <div class="card-name">メイホウ在庫</div><div class="card-desc">Google スプレッドシート</div>
-          <div><span class="badge badge-doc">資料</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://drive.google.com/drive/folders/1-dzWjcwDSZLPoWtfkev0IegllI-a3F1w" target="_blank" rel="noopener">
-          <div class="card-icon icon-amber"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5"><path d="m22 12-4.5 7.5H6.5L2 12l4.5-7.5h11L22 12z"/><polyline points="2 12 22 12"/><line x1="12" y1="4.5" x2="12" y2="19.5"/></svg></div>
-          <div class="card-name">催事売上情報</div><div class="card-desc">Google ドライブ</div>
-          <div><span class="badge badge-doc">資料</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://docs.google.com/spreadsheets/d/13Gv-282zzO8aIpl7p4TRhK9RfDJ1BkfYgWr-yA5f9rc/edit?gid=0#gid=0" target="_blank" rel="noopener">
-          <div class="card-icon icon-purple"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="card-name">業務分担表</div><div class="card-desc">Google スプレッドシート</div>
-          <div><span class="badge badge-doc">資料</span></div><div class="card-arrow">↗</div>
-        </a>
-      </div>
+  <div class="section">
+    <div class="section-head"><span class="section-title">外部サービス</span><div class="section-line"></div></div>
+    <div class="cards-grid">
+      <a class="card" href="https://www.instagram.com/" target="_blank" rel="noopener">
+        <div class="card-icon icon-pink"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#993556"/></svg></div>
+        <div class="card-name">Instagram</div><div class="card-desc">公式アカウント管理</div>
+        <div><span class="badge badge-sns">SNS</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://business.google.com/" target="_blank" rel="noopener">
+        <div class="card-icon icon-blue"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="card-name">Google ビジネス</div><div class="card-desc">口コミ・情報管理</div>
+        <div><span class="badge badge-ext">外部</span></div><div class="card-arrow">↗</div>
+      </a>
+      <a class="card" href="https://search.google.com/search-console" target="_blank" rel="noopener">
+        <div class="card-icon icon-green"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="card-name">Search Console</div><div class="card-desc">SEO・検索パフォーマンス</div>
+        <div><span class="badge badge-ext">外部</span></div><div class="card-arrow">↗</div>
+      </a>
     </div>
+  </div>
 
-    <div class="section">
-      <div class="section-head"><span class="section-title">ECサイト管理</span><div class="section-line"></div></div>
-      <div class="cards-grid">
-        <a class="card" href="https://admin.ocnk.net/admin/login.php" target="_blank" rel="noopener">
-          <div class="card-icon icon-amber"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-          <div class="card-name">公式ECサイト</div><div class="card-desc">おちゃのこネット管理</div>
-          <div><span class="badge badge-ec">EC</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://glogin.rms.rakuten.co.jp/?sp_id=1" target="_blank" rel="noopener">
-          <div class="card-icon icon-red"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#A32D2D" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h5a2 2 0 0 0 0-4H8v8"/><line x1="13" y1="12" x2="16" y2="16"/></svg></div>
-          <div class="card-name">楽天市場 RMS</div><div class="card-desc">店舗管理システム</div>
-          <div><span class="badge badge-ec">EC</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://sellercentral-japan.amazon.com/ap/signin?openid.pape.preferred_auth_policies=Policy15&openid.pape.max_auth_age=300&openid.return_to=https%3A%2F%2Fsellercentral-japan.amazon.com%2Fgp%2Fhomepage.html&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=sc_jp_amazon_com_v2&openid.mode=checkid_setup&language=ja_JP&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" target="_blank" rel="noopener">
-          <div class="card-icon icon-amber"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5"><path d="M4 17c3.3 1.7 9.3 2.3 14-.5M16.5 18.5c.8-.3 2-.8 2.5-1.5"/><path d="M8 12V7a4 4 0 0 1 8 0v5"/><rect x="4" y="12" width="16" height="6" rx="2"/></svg></div>
-          <div class="card-name">Amazon セラーセントラル</div><div class="card-desc">出品・注文管理</div>
-          <div><span class="badge badge-ec">EC</span></div><div class="card-arrow">↗</div>
-        </a>
-      </div>
+  <div class="section">
+    <div class="section-head"><span class="section-title">基本情報</span><div class="section-line"></div></div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-label">TEL</div><div class="info-value"><a href="tel:0573260703">0573-26-0703</a></div></div>
+      <div class="info-card"><div class="info-label">メール</div><div class="info-value" style="font-size:12px"><a href="mailto:info@ryouheido.enat.jp">info@ryouheido.enat.jp</a></div></div>
+      <div class="info-card"><div class="info-label">住所</div><div class="info-value" style="font-size:12px">岐阜県恵那市大井町2714-66</div></div>
     </div>
+  </div>
 
-    <div class="section">
-      <div class="section-head"><span class="section-title">外部サービス</span><div class="section-line"></div></div>
-      <div class="cards-grid">
-        <a class="card" href="https://www.instagram.com/" target="_blank" rel="noopener">
-          <div class="card-icon icon-pink"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#993556"/></svg></div>
-          <div class="card-name">Instagram</div><div class="card-desc">公式アカウント管理</div>
-          <div><span class="badge badge-sns">SNS</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://business.google.com/" target="_blank" rel="noopener">
-          <div class="card-icon icon-blue"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div class="card-name">Google ビジネス</div><div class="card-desc">口コミ・情報管理</div>
-          <div><span class="badge badge-ext">外部</span></div><div class="card-arrow">↗</div>
-        </a>
-        <a class="card" href="https://search.google.com/search-console" target="_blank" rel="noopener">
-          <div class="card-icon icon-green"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <div class="card-name">Search Console</div><div class="card-desc">SEO・検索パフォーマンス</div>
-          <div><span class="badge badge-ext">外部</span></div><div class="card-arrow">↗</div>
-        </a>
-      </div>
-    </div>
+</main>
 
-    <div class="section">
-      <div class="section-head"><span class="section-title">基本情報</span><div class="section-line"></div></div>
-      <div class="info-grid">
-        <div class="info-card"><div class="info-label">TEL</div><div class="info-value"><a href="tel:0573260703">0573-26-0703</a></div></div>
-        <div class="info-card"><div class="info-label">メール</div><div class="info-value" style="font-size:12px"><a href="mailto:info@ryouheido.enat.jp">info@ryouheido.enat.jp</a></div></div>
-        <div class="info-card"><div class="info-label">住所</div><div class="info-value" style="font-size:12px">岐阜県恵那市大井町2714-66</div></div>
-      </div>
-    </div>
-
-  </main>
-
-  <footer class="portal-footer">
-    <div class="footer-left"><div class="footer-dot"></div><span>メンバー専用 — 社外秘</span></div>
-    <div class="footer-right" id="footer-year"></div>
-  </footer>
-</div>
+<footer class="portal-footer">
+  <div class="footer-left"><div class="footer-dot"></div><span>メンバー専用 — 社外秘</span></div>
+  <div class="footer-right" id="footer-year"></div>
+</footer>
 
 <script>
 (function () {
-  var PASSWORD = 'ryoheido2026';
-
-  function isLoggedIn() {
-    return sessionStorage.getItem('rh_auth') === '1';
+  if (sessionStorage.getItem('rh_auth') !== '1') {
+    location.replace('login.html');
+    return;
   }
-
-  function showPortal() {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('portal-screen').style.display = 'block';
-    var now = new Date();
-    var el = document.getElementById('portal-date');
-    if (el) el.textContent = now.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
-    var fy = document.getElementById('footer-year');
-    if (fy) fy.textContent = now.getFullYear() + ' 恵那栗工房 良平堂';
-  }
-
-  function showLogin() {
-    document.getElementById('login-screen').style.display = 'flex';
-    document.getElementById('portal-screen').style.display = 'none';
-  }
-
-  if (isLoggedIn()) { showPortal(); }
-
-  document.getElementById('login-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var input = document.getElementById('login-pw').value;
-    var err = document.getElementById('login-error');
-    if (!input) { err.textContent = 'パスワードを入力してください'; return; }
-    if (input === PASSWORD) {
-      sessionStorage.setItem('rh_auth', '1');
-      err.textContent = '';
-      showPortal();
-    } else {
-      err.textContent = 'パスワードが正しくありません';
-      document.getElementById('login-pw').value = '';
-      document.getElementById('login-pw').focus();
-    }
-  });
-
+  var now = new Date();
+  var el = document.getElementById('portal-date');
+  if (el) el.textContent = now.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+  var fy = document.getElementById('footer-year');
+  if (fy) fy.textContent = now.getFullYear() + ' 恵那栗工房 良平堂';
   document.getElementById('logout-btn').addEventListener('click', function () {
     sessionStorage.removeItem('rh_auth');
-    showLogin();
-    document.getElementById('login-pw').value = '';
+    location.href = 'login.html';
   });
 })();
 </script>
