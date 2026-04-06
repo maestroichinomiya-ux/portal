@@ -167,9 +167,11 @@ svg.ti { width: 18px; height: 18px; display: block; }
     <div class="login-logo">良</div>
     <div class="login-title">恵那栗工房 良平堂</div>
     <div class="login-subtitle">MEMBER PORTAL</div>
+    <form id="login-form" autocomplete="on" onsubmit="return false;">
     <label class="login-label">パスワード</label>
-    <input type="password" id="login-pw" class="login-input" placeholder="••••••••" autocomplete="current-password">
-    <button class="login-btn" id="login-submit">ログイン</button>
+    <input type="password" id="login-pw" name="password" class="login-input" placeholder="••••••••" autocomplete="current-password">
+    <button type="submit" class="login-btn" id="login-submit">ログイン</button>
+    </form>
     <div class="login-error" id="login-error"></div>
   </div>
 </div>
@@ -313,7 +315,7 @@ svg.ti { width: 18px; height: 18px; display: block; }
       <div class="section-head"><span class="section-title">基本情報</span><div class="section-line"></div></div>
       <div class="info-grid">
         <div class="info-card"><div class="info-label">TEL</div><div class="info-value"><a href="tel:0573260703">0573-26-0703</a></div></div>
-        <div class="info-card"><div class="info-label">メール</div><div class="info-value" style="font-size:12px"><a href="mailto:info@ryouheido.enat.jp">info@ryouheido.enat.jp</a></div></div>
+        <div class="info-card"><div class="info-label">メール</div><div class="info-value" style="font-size:12px"><a href="/cdn-cgi/l/email-protection#71181f171e3103081e04191418151e5f141f10055f1b01"><span class="__cf_email__" data-cfemail="95fcfbf3fad5e7ecfae0fdf0fcf1fabbf0fbf4e1bbffe5">[email&#160;protected]</span></a></div></div>
         <div class="info-card"><div class="info-label">住所</div><div class="info-value" style="font-size:12px">岐阜県恵那市大井町2714-66</div></div>
       </div>
     </div>
@@ -326,7 +328,7 @@ svg.ti { width: 18px; height: 18px; display: block; }
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function () {
   var PASSWORD = 'ryoheido2026';
 
@@ -368,14 +370,4 @@ svg.ti { width: 18px; height: 18px; display: block; }
 
   document.getElementById('login-submit').addEventListener('click', doLogin);
   document.getElementById('login-pw').addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') doLogin();
-  });
-  document.getElementById('logout-btn').addEventListener('click', function () {
-    sessionStorage.removeItem('rh_auth');
-    showLogin();
-    document.getElementById('login-pw').value = '';
-  });
-})();
-</script>
-</body>
-</html>
+    if (e.key === 'Enter
