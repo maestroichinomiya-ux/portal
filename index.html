@@ -17,7 +17,6 @@
 }
 html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg); color: var(--text); }
 
-/* ===== LOGIN ===== */
 #login-screen {
   min-height: 100vh; display: flex; align-items: center;
   justify-content: center; background: var(--dark);
@@ -39,18 +38,9 @@ html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg);
   font-family: var(--serif); font-size: 22px; color: var(--dark);
   font-weight: 600; margin: 0 auto 20px;
 }
-.login-title {
-  font-family: var(--serif); font-size: 17px; color: var(--cream);
-  font-weight: 500; letter-spacing: 0.05em; margin-bottom: 4px;
-}
-.login-subtitle {
-  font-size: 11px; color: var(--gold); font-weight: 300;
-  letter-spacing: 0.1em; margin-bottom: 32px;
-}
-.login-label {
-  display: block; font-size: 11px; color: rgba(248,244,237,0.5);
-  text-align: left; margin-bottom: 8px; letter-spacing: 0.08em;
-}
+.login-title { font-family: var(--serif); font-size: 17px; color: var(--cream); font-weight: 500; letter-spacing: 0.05em; margin-bottom: 4px; }
+.login-subtitle { font-size: 11px; color: var(--gold); font-weight: 300; letter-spacing: 0.1em; margin-bottom: 32px; }
+.login-label { display: block; font-size: 11px; color: rgba(248,244,237,0.5); text-align: left; margin-bottom: 8px; letter-spacing: 0.08em; }
 .login-input {
   width: 100%; padding: 12px 16px;
   background: rgba(255,255,255,0.06);
@@ -72,7 +62,6 @@ html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg);
 .login-btn:active { transform: scale(0.98); }
 .login-error { font-size: 12px; color: #F09595; margin-top: 14px; min-height: 18px; }
 
-/* ===== PORTAL ===== */
 #portal-screen { display: none; min-height: 100vh; background: var(--bg); }
 .portal-header {
   background: var(--dark); padding: 0 32px; height: 60px;
@@ -80,22 +69,12 @@ html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg);
   position: sticky; top: 0; z-index: 100;
 }
 .portal-header-left { display: flex; align-items: center; gap: 14px; }
-.portal-logo {
-  width: 34px; height: 34px; border-radius: 50%; background: var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif); font-size: 14px; color: var(--dark);
-  font-weight: 600; flex-shrink: 0;
-}
+.portal-logo { width: 34px; height: 34px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 14px; color: var(--dark); font-weight: 600; flex-shrink: 0; }
 .portal-name { font-family: var(--serif); font-size: 14px; color: var(--cream); font-weight: 500; letter-spacing: 0.05em; }
 .portal-name-sub { font-size: 10px; color: var(--gold); margin-top: 1px; font-weight: 300; letter-spacing: 0.1em; }
 .portal-header-right { display: flex; align-items: center; gap: 16px; }
 .portal-date { font-size: 11px; color: rgba(248,244,237,0.4); font-weight: 300; }
-.logout-btn {
-  font-size: 11px; color: rgba(248,244,237,0.4); background: none;
-  border: 0.5px solid rgba(248,244,237,0.15); border-radius: 6px;
-  padding: 5px 12px; cursor: pointer; font-family: var(--sans);
-  transition: color 0.2s, border-color 0.2s; letter-spacing: 0.05em;
-}
+.logout-btn { font-size: 11px; color: rgba(248,244,237,0.4); background: none; border: 0.5px solid rgba(248,244,237,0.15); border-radius: 6px; padding: 5px 12px; cursor: pointer; font-family: var(--sans); transition: color 0.2s, border-color 0.2s; letter-spacing: 0.05em; }
 .logout-btn:hover { color: rgba(248,244,237,0.7); border-color: rgba(248,244,237,0.3); }
 
 .portal-body { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
@@ -108,12 +87,7 @@ html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg);
 .section-title { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; color: var(--text3); white-space: nowrap; }
 
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
-.card {
-  background: var(--surface); border: 0.5px solid var(--border);
-  border-radius: var(--r); padding: 16px 16px 14px;
-  text-decoration: none; display: block; position: relative;
-  overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
-}
+.card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--r); padding: 16px 16px 14px; text-decoration: none; display: block; position: relative; overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s; }
 .card:hover { border-color: var(--border-h); box-shadow: 0 2px 16px rgba(44,36,32,0.07); transform: translateY(-1px); }
 .card:active { transform: translateY(0); }
 .card:hover .card-arrow { opacity: 1; transform: translate(1px,-1px); }
@@ -129,12 +103,12 @@ html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg);
 .card-desc { font-size: 11px; color: var(--text2); line-height: 1.4; }
 .card-arrow { position: absolute; top: 12px; right: 12px; font-size: 12px; color: var(--text3); opacity: 0; transition: opacity 0.15s, transform 0.15s; }
 .badge { display: inline-block; font-size: 9px; font-weight: 500; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 20px; margin-top: 8px; }
-.badge-web    { background: #E6F1FB; color: #185FA5; }
-.badge-int    { background: #EAF3DE; color: #3B6D11; }
-.badge-ext    { background: #FAEEDA; color: #854F0B; }
-.badge-sns    { background: #FBEAF0; color: #993556; }
-.badge-ec     { background: #FCEBEB; color: #A32D2D; }
-.badge-doc    { background: #EEEDFE; color: #534AB7; }
+.badge-web { background: #E6F1FB; color: #185FA5; }
+.badge-int { background: #EAF3DE; color: #3B6D11; }
+.badge-ext { background: #FAEEDA; color: #854F0B; }
+.badge-sns { background: #FBEAF0; color: #993556; }
+.badge-ec  { background: #FCEBEB; color: #A32D2D; }
+.badge-doc { background: #EEEDFE; color: #534AB7; }
 
 .info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 .info-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--r); padding: 12px 14px; }
@@ -146,7 +120,6 @@ html, body { min-height: 100vh; font-family: var(--sans); background: var(--bg);
 .footer-left { display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(248,244,237,0.35); }
 .footer-dot { width: 5px; height: 5px; border-radius: 50%; background: #3B6D11; flex-shrink: 0; }
 .footer-right { font-size: 11px; color: rgba(248,244,237,0.25); }
-
 svg.ti { width: 18px; height: 18px; display: block; }
 
 @media (max-width: 600px) {
@@ -161,22 +134,20 @@ svg.ti { width: 18px; height: 18px; display: block; }
 </head>
 <body>
 
-<!-- ログイン画面 -->
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">良</div>
     <div class="login-title">恵那栗工房 良平堂</div>
     <div class="login-subtitle">MEMBER PORTAL</div>
-    <form id="login-form" autocomplete="on" onsubmit="return false;">
-    <label class="login-label">パスワード</label>
-    <input type="password" id="login-pw" name="password" class="login-input" placeholder="••••••••" autocomplete="current-password">
-    <button type="submit" class="login-btn" id="login-submit">ログイン</button>
+    <form id="login-form" autocomplete="on">
+      <label class="login-label">パスワード</label>
+      <input type="password" id="login-pw" name="password" class="login-input" placeholder="••••••••" autocomplete="current-password">
+      <button type="submit" class="login-btn">ログイン</button>
     </form>
     <div class="login-error" id="login-error"></div>
   </div>
 </div>
 
-<!-- ポータル画面 -->
 <div id="portal-screen">
   <header class="portal-header">
     <div class="portal-header-left">
@@ -194,7 +165,6 @@ svg.ti { width: 18px; height: 18px; display: block; }
 
   <main class="portal-body">
 
-    <!-- 公開サイト -->
     <div class="section">
       <div class="section-head"><span class="section-title">公開サイト</span><div class="section-line"></div></div>
       <div class="cards-grid">
@@ -211,7 +181,6 @@ svg.ti { width: 18px; height: 18px; display: block; }
       </div>
     </div>
 
-    <!-- 社内ツール -->
     <div class="section">
       <div class="section-head"><span class="section-title">社内ツール</span><div class="section-line"></div></div>
       <div class="cards-grid">
@@ -243,7 +212,6 @@ svg.ti { width: 18px; height: 18px; display: block; }
       </div>
     </div>
 
-    <!-- 資料・データ -->
     <div class="section">
       <div class="section-head"><span class="section-title">資料・データ</span><div class="section-line"></div></div>
       <div class="cards-grid">
@@ -262,11 +230,9 @@ svg.ti { width: 18px; height: 18px; display: block; }
           <div class="card-name">業務分担表</div><div class="card-desc">Google スプレッドシート</div>
           <div><span class="badge badge-doc">資料</span></div><div class="card-arrow">↗</div>
         </a>
-
       </div>
     </div>
 
-    <!-- ECサイト管理 -->
     <div class="section">
       <div class="section-head"><span class="section-title">ECサイト管理</span><div class="section-line"></div></div>
       <div class="cards-grid">
@@ -288,7 +254,6 @@ svg.ti { width: 18px; height: 18px; display: block; }
       </div>
     </div>
 
-    <!-- 外部サービス -->
     <div class="section">
       <div class="section-head"><span class="section-title">外部サービス</span><div class="section-line"></div></div>
       <div class="cards-grid">
@@ -310,12 +275,11 @@ svg.ti { width: 18px; height: 18px; display: block; }
       </div>
     </div>
 
-    <!-- 基本情報 -->
     <div class="section">
       <div class="section-head"><span class="section-title">基本情報</span><div class="section-line"></div></div>
       <div class="info-grid">
         <div class="info-card"><div class="info-label">TEL</div><div class="info-value"><a href="tel:0573260703">0573-26-0703</a></div></div>
-        <div class="info-card"><div class="info-label">メール</div><div class="info-value" style="font-size:12px"><a href="/cdn-cgi/l/email-protection#71181f171e3103081e04191418151e5f141f10055f1b01"><span class="__cf_email__" data-cfemail="95fcfbf3fad5e7ecfae0fdf0fcf1fabbf0fbf4e1bbffe5">[email&#160;protected]</span></a></div></div>
+        <div class="info-card"><div class="info-label">メール</div><div class="info-value" style="font-size:12px"><a href="mailto:info@ryouheido.enat.jp">info@ryouheido.enat.jp</a></div></div>
         <div class="info-card"><div class="info-label">住所</div><div class="info-value" style="font-size:12px">岐阜県恵那市大井町2714-66</div></div>
       </div>
     </div>
@@ -328,7 +292,7 @@ svg.ti { width: 18px; height: 18px; display: block; }
   </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function () {
   var PASSWORD = 'ryoheido2026';
 
@@ -353,7 +317,8 @@ svg.ti { width: 18px; height: 18px; display: block; }
 
   if (isLoggedIn()) { showPortal(); }
 
-  function doLogin() {
+  document.getElementById('login-form').addEventListener('submit', function (e) {
+    e.preventDefault();
     var input = document.getElementById('login-pw').value;
     var err = document.getElementById('login-error');
     if (!input) { err.textContent = 'パスワードを入力してください'; return; }
@@ -366,8 +331,14 @@ svg.ti { width: 18px; height: 18px; display: block; }
       document.getElementById('login-pw').value = '';
       document.getElementById('login-pw').focus();
     }
-  }
+  });
 
-  document.getElementById('login-submit').addEventListener('click', doLogin);
-  document.getElementById('login-pw').addEventListener('keydown', function (e) {
-    if (e.key === 'Enter
+  document.getElementById('logout-btn').addEventListener('click', function () {
+    sessionStorage.removeItem('rh_auth');
+    showLogin();
+    document.getElementById('login-pw').value = '';
+  });
+})();
+</script>
+</body>
+</html>
