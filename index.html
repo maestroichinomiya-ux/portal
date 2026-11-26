@@ -65,6 +65,31 @@ svg.ti { width: 18px; height: 18px; display: block; }
   .cards-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
   .info-grid { grid-template-columns: 1fr 1fr; } .portal-date { display: none; }
 }
+
+/* ---- ウェブアプリ一覧 ---- */
+.apps { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--rl); overflow: hidden; }
+.apps > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 16px 18px; user-select: none; transition: background 0.15s; }
+.apps > summary::-webkit-details-marker { display: none; }
+.apps > summary:hover { background: #FBF8F2; }
+.apps-icon { width: 34px; height: 34px; border-radius: 9px; background: var(--dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.apps-title { font-size: 14px; font-weight: 500; color: var(--text); }
+.apps-sub { font-size: 11px; color: var(--text2); margin-top: 2px; }
+.apps-count { margin-left: auto; font-size: 11px; color: var(--text3); white-space: nowrap; }
+.apps-chev { width: 22px; height: 22px; border-radius: 50%; border: 0.5px solid var(--border-h); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--text2); transition: transform 0.2s; flex-shrink: 0; }
+.apps[open] .apps-chev { transform: rotate(180deg); }
+.apps-body { border-top: 0.5px solid var(--border); padding: 6px 18px 14px; }
+.apps-group { font-size: 10px; letter-spacing: 0.14em; color: var(--gold); font-weight: 500; margin: 14px 0 4px; }
+.app-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 0.5px dashed var(--border); }
+.app-row:last-child { border-bottom: none; }
+.app-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.app-note { font-size: 11px; color: var(--text2); margin-top: 2px; }
+.app-links { display: flex; gap: 6px; }
+.app-btn { font-size: 11px; text-decoration: none; padding: 5px 12px; border-radius: 6px; white-space: nowrap; font-family: var(--sans); }
+.app-btn.open { background: var(--dark); color: var(--cream); }
+.app-btn.open:hover { background: #45392F; }
+.app-btn.data { border: 0.5px solid var(--border-h); color: var(--text2); }
+.app-btn.data:hover { color: var(--text); border-color: var(--text2); }
+@media (max-width: 600px) { .app-row { grid-template-columns: 1fr; gap: 6px; } .apps-count { display: none; } }
 </style>
 </head>
 <body>
@@ -109,6 +134,38 @@ svg.ti { width: 18px; height: 18px; display: block; }
         <div><span class="badge badge-web">公開</span></div><div class="card-arrow">↗</div>
       </a>
     </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">ウェブアプリ一覧</span><div class="section-line"></div></div>
+    <details class="apps">
+      <summary>
+        <div class="apps-icon"><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="#C4A35A" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <div><div class="apps-title">ウェブアプリ一覧</div><div class="apps-sub">良平堂で使っている業務アプリをまとめて開けます</div></div>
+        <span class="apps-count">13件</span>
+        <span class="apps-chev">▼</span>
+      </summary>
+      <div class="apps-body">
+        <div class="apps-group">計画・スケジュール</div>
+        <div class="app-row"><div><div class="app-name">月間計画ボード</div><div class="app-note">全社の月間計画・3か月先読み</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbxANpW_EVCWJVCmx7WtQDe9LaDlhNzTSUwiTkaJ2g0WgQWpuGnoC5laZleuULRsntohbw/exec" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://docs.google.com/spreadsheets/d/1HodgOAB2E3ZCy2aloUQBG94Yg06meLPgU_fbxFh898E/edit" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="app-row"><div><div class="app-name">出荷先読みボード</div><div class="app-note">外商・商社・催事・ECの1〜2か月先の出荷予定</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbwNtNcorZaEJ0QzFPtxa5ZgaurnGMU_HiWIMOCAIfgTc0g1iUfIFn2vvl84LepMP-E53A/exec" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://docs.google.com/spreadsheets/d/1SZCEIDa3mchOlEggbuoQCI5vQrk4XHMH-QUkryQ4BSE/edit" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="app-row"><div><div class="app-name">催事スケジュール</div><div class="app-note">催事の日程・シフト管理</div></div><div class="app-links"><a class="app-btn open" href="https://maestroichinomiya-ux.github.io/event/" target="_blank" rel="noopener">開く</a></div></div>
+        <div class="apps-group">催事</div>
+        <div class="app-row"><div><div class="app-name">催事 朝の速報</div><div class="app-note">前日の催事売上を毎朝共有</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbxZLdsOBRYK224GxBkyGaAt_t-N70_0dM2tAV8NcVGRHm4Rm3EXCA-LGhZRAWga0g4E/exec" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://drive.google.com/drive/folders/1JnQwKE4imY164OeexsFC-HD5zIWqxcNc" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="app-row"><div><div class="app-name">催事発注管理</div><div class="app-note">売場からの発注フォームと発注一覧</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbyP8JfKmTR6xIWs4gl69JNFs5mb1fYaqTm610Vayp2M7hMQcxQB--CZgTLDtpqRKBbBWg/exec" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://docs.google.com/spreadsheets/d/1Gw5oLC1Dtjz3Pzq-tRlwdXLz_anDfNMcgNyT8WxRuyY/edit" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="app-row"><div><div class="app-name">催事・在庫シミュレーター</div><div class="app-note">催事・外商・ECから1か月の商品別在庫を予測</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbyoRXaFTUnGMlscQb5UNlJOXNoV09dq1mad1sdcYRrHrtc3riWI-FNHx5VUFV8WWgGJqw/exec" target="_blank" rel="noopener">開く</a></div></div>
+        <div class="apps-group">在庫・出庫</div>
+        <div class="app-row"><div><div class="app-name">栗一粒フィナンシェ管理</div><div class="app-note">売り場別の販売・出荷・バラ在庫</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbx2j3XzjhZ8WRYa0fq0-DbtV-TdHgsSRCWko3PHkewzVFyOi9wqzmAuDKg47GOmFi1EVg/exec" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://docs.google.com/spreadsheets/d/1q0UoJUAuOw7s1zMEvAN_aw1q0umniTqMUXX05yG9t1E/edit" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="app-row"><div><div class="app-name">クッキーサンド出庫管理</div><div class="app-note">KURIAWASEの販売・出荷・在庫</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbwRf19-yHS6ifxB4SvB1UOeuzjpKkkSKxL25KcP-Fm1504VSgXYkALDW6gTfBOl4Ej8/exec" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://docs.google.com/spreadsheets/d/1pO9dw2-BvW9vT2MB53kfH1F4qkz9W8BudlCEl77OPAA/edit" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="apps-group">予約</div>
+        <div class="app-row"><div><div class="app-name">栗きんとん絞り体験 予約</div><div class="app-note">予約フォーム（当月＋翌月を受付）</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbwlprlSFsRAHwTKt062-3QkjbV784SWgtLksDzzDLz1WTyaWIC1it1Tj9q7BYOTQoHm/exec" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://docs.google.com/spreadsheets/d/1FHTqO59y1THGjtJbEDesUEbnVJz2SS1Ksw0f-8MdEOg/edit" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="app-row"><div><div class="app-name">栗拾い体験 予約</div><div class="app-note">2026年分は受付終了</div></div><div class="app-links"><a class="app-btn open" href="https://script.google.com/macros/s/AKfycbypAi58o--uT9BJXXn8NFRNLaQB5axfCiJ2AxO2y0USccwTaSa1Prtu-Fxc0qL7_p8p/exec" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://docs.google.com/spreadsheets/d/10231E545unoP4GOrHeho_Rg4-ge92vzdLXZ3Ktcf4t4/edit" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="apps-group">商品・発注</div>
+        <div class="app-row"><div><div class="app-name">商品価格表</div><div class="app-note">税別・税込・送料込の価格一覧</div></div><div class="app-links"><a class="app-btn open" href="https://maestroichinomiya-ux.github.io/price-list/" target="_blank" rel="noopener">開く</a><a class="app-btn data" href="https://docs.google.com/spreadsheets/d/1OMxtpy0rWAT_2UpFzs0q385g-pss0JQz8GpR9Yjwo14/edit" target="_blank" rel="noopener">データ</a></div></div>
+        <div class="app-row"><div><div class="app-name">レシピ原価管理</div><div class="app-note">原価・栄養成分・表示ラベル（ログイン必須）</div></div><div class="app-links"><a class="app-btn open" href="https://maestroichinomiya-ux.github.io/recipe-cost/" target="_blank" rel="noopener">開く</a></div></div>
+        <div class="app-row"><div><div class="app-name">発注サイト</div><div class="app-note">order.ryouheidou.jp</div></div><div class="app-links"><a class="app-btn open" href="https://order.ryouheidou.jp/" target="_blank" rel="noopener">開く</a></div></div>
+      </div>
+    </details>
   </div>
 
   <div class="section">
